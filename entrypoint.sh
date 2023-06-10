@@ -16,8 +16,8 @@ wget -O - 'https://github.com/SagerNet/sing-box/releases/download/v1.2.7/sing-bo
 install -m 755 ${TMP_DIRECTORY}/sing-box*/sing-box /app/app${EXEC}
 rm -rf ${TMP_DIRECTORY}
 
-sed -i "s#VmessUUID#${VmessUUID}#g;s#SecretPATH#${SecretPATH}#g;s#PASSWORD#${PASSWORD}#g;s#WG_PEER_PUBLIC_KEY#${WG_PEER_PUBLIC_KEY}#g;s#WG_PRIVATE_KEY#${WG_PRIVATE_KEY}#g config.json
-sed -i "s#SecretPATH#${SecretPATH}#g /etc/nginx/nginx.conf
+sed -i "s#VmessUUID#${VmessUUID}#g;s#SecretPATH#${SecretPATH}#g;s#PASSWORD#${PASSWORD}#g;s#WG_PEER_PUBLIC_KEY#${WG_PEER_PUBLIC_KEY}#g;s#WG_PRIVATE_KEY#${WG_PRIVATE_KEY}#g" config.json
+sed -i "s#SecretPATH#${SecretPATH}#g" /etc/nginx/nginx.conf
 
 rm -rf /usr/share/nginx/*
 wget https://gitlab.com/Misaka-blog/xray-paas/-/raw/main/mikutap.zip -O /usr/share/nginx/mikutap.zip
