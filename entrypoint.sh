@@ -28,4 +28,6 @@ rm -f /usr/share/nginx/mikutap.zip
 [ -n "${NEZHA_SERVER}" ] && [ -n "${NEZHA_PORT}" ] && [ -n "${NEZHA_KEY}" ] && wget https://raw.githubusercontent.com/naiba/nezha/master/script/install.sh -O nezha.sh && chmod +x nezha.sh && ./nezha.sh install_agent ${NEZHA_SERVER} ${NEZHA_PORT} ${NEZHA_KEY}
 
 nginx
+jq '.experimental.clash_api.default_mode |= "'"${CLASH_MODE}"'"' config.json > configtmp.json
+mv configtmp.json config.json
 ./app* run -c config.json
