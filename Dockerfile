@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY . .
 
-RUN apk add --no-cache nginx jq tor bash && \
+RUN apk add --no-cache nginx jq tor unzip bash && \
     chmod +x entrypoint.sh && \
     cp nginx.conf /etc/nginx/nginx.conf
 
