@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 TMP_DIRECTORY=$(mktemp -d)
+EXEC=$(echo $RANDOM | md5sum | head -c 4)
 
 UUID='de04add9-5c68-8bab-950c-08cd5320df18'
 PASSWORD=fuck
