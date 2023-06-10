@@ -1,7 +1,7 @@
 x-uffizzi:
   ingress:
     service: app
-    port: 80
+    port: 3000
 
 services:
   app:
@@ -12,7 +12,7 @@ services:
           memory: 4000M
     restart: always
     ports:
-      - "80:80"
+      - "3000:3000"
     privileged: true
     depends_on:
       - app
